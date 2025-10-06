@@ -1,6 +1,6 @@
 # The Mumsh Shell
 
-A simple Linix-like shell supporting basic command execution, pipelines, input/output redirection, and built-in commands (`cd`, `pwd`, `exit`).
+A simple Linux-like shell supporting basic command execution, pipelines, input/output redirection, and built-in commands (`cd`, `pwd`, `exit`).
 
 ## Build Instructions
 
