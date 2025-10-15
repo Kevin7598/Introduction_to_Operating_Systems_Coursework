@@ -57,7 +57,3 @@ mumsh $ exit
 
 - Press `Ctrl+C` to interrupt the current command (shell will not exit).
 - Type `exit` or press `Ctrl+D` to quit the shell.
-<<<<<<< Updated upstream
-=======
-  
->>>>>>> Stashed changes
