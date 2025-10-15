@@ -1,5 +1,5 @@
-#ifndef ERROR_HANDLER_H
-#define ERROR_HANDLER_H
+#ifndef INCLUDE_ERROR_HANDLER_H_
+#define INCLUDE_ERROR_HANDLER_H_
 
 #include <stdbool.h>
 
@@ -22,4 +22,4 @@ typedef enum {
 */
 void print_error(ErrorType type, const char *arg);
 
-#endif
+#endif  // INCLUDE_ERROR_HANDLER_H_

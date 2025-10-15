@@ -1,4 +1,4 @@
-#include "error_handler.h"
+#include "../include/error_handler.h"
 #include <stdio.h>
 
 void print_error(ErrorType type, const char *arg) {

@@ -1,8 +1,8 @@
-#include "utility.h"
+#include "../include/utility.h"
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-#include "error_handler.h"
+#include "../include/error_handler.h"
 
 bool is_special_char(char c) { return (c == '>' || c == '<' || c == ' '); }
 
@@ -31,8 +31,8 @@ bool check_syntax(const char *line) {
     return true;
 }
 
-char *next_token_checked(void) {
-    char *next = strtok(NULL, " \t\n");
+char *next_token_checked(char **saveptr) {
+    char *next = strtok_r(NULL, " \t\n", saveptr);
     if (!next || strcmp(next, ">") == 0 || strcmp(next, ">>") == 0 ||
         strcmp(next, "<") == 0 || strcmp(next, "|") == 0) {
         print_error(ERR_SYNTAX, next ? next : "newline");

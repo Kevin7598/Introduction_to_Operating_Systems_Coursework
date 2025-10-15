@@ -1,11 +1,11 @@
-#ifndef PARSER_H
-#define PARSER_H
+#ifndef INCLUDE_PARSER_H_
+#define INCLUDE_PARSER_H_
 
 #define MAXLINE 1024
 #define MAXARGS 64
 
 #include <stdbool.h>
-#include "error_handler.h"
+#include "../include/error_handler.h"
 
 typedef struct {
   char *argv[MAXARGS];
@@ -30,7 +30,7 @@ char *preprocess(const char *line);
 * @param set_append Boolean indicating if appending should be set to true.
 * @return true if successful, false if there was an error (e.g., duplication).
 */
-bool handle_redirection(char **target, bool *append, ErrorType err_dup, bool set_append);
+bool handle_redirection(char **target, bool *append, ErrorType err_dup, bool set_append, char **saveptr);
 
 /**
 * Tokenize the command line into arguments and handle redirections.
@@ -59,4 +59,4 @@ int parse_pipeline(char *line, stage stages[]);
 */
 void free_stages(stage *st, int n);
 
-#endif
+#endif  // INCLUDE_PARSER_H_

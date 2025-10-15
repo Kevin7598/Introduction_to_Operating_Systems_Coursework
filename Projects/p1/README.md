@@ -1,3 +1,6 @@
+![License](https://img.shields.io/badge/finished-SJTU-blue.svg)
+[![Build Status](https://focs.ji.sjtu.edu.cn/git/ece482/Zhukaiqi522370910091-p1/actions/workflows/push.yaml/badge.svg?branch=master)](https://focs.ji.sjtu.edu.cn/git/ece482/Zhukaiqi522370910091-p1/actions)
+
 # The Mumsh Shell
 
 A simple Linux-like shell supporting basic command execution, pipelines, input/output redirection, and built-in commands (`cd`, `pwd`, `exit`).
@@ -54,3 +57,7 @@ mumsh $ exit
 
 - Press `Ctrl+C` to interrupt the current command (shell will not exit).
 - Type `exit` or press `Ctrl+D` to quit the shell.
+<<<<<<< Updated upstream
+=======
+  
+>>>>>>> Stashed changes

@@ -1,5 +1,5 @@
-#ifndef UTILITY_H
-#define UTILITY_H
+#ifndef INCLUDE_UTILITY_H_
+#define INCLUDE_UTILITY_H_
 
 #include <stdbool.h>
 
@@ -29,6 +29,6 @@ bool check_syntax(const char *line);
 * Specifically, it checks if the next token is valid and not a special character.
 * @return The next token if valid, NULL if there is a syntax error.
 */
-char *next_token_checked(void);
+char *next_token_checked(char **saveptr);
 
-#endif
+#endif  // INCLUDE_UTILITY_H_

@@ -1,5 +1,5 @@
-#ifndef BUILTIN_H
-#define BUILTIN_H
+#ifndef INCLUDE_BUILT_IN_H_
+#define INCLUDE_BUILT_IN_H_
 
 /**
 * Change the current working directory.
@@ -12,4 +12,4 @@ void built_in_cd(char **args);
 */
 void built_in_pwd(void);
 
-#endif
+#endif  // INCLUDE_BUILT_IN_H_

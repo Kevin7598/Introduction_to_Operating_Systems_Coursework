@@ -1,9 +1,9 @@
-#include "built_in.h"
+#include "../include/built_in.h"
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "error_handler.h"
+#include "../include/error_handler.h"
 
 #define PATHS_MAX 4096
 

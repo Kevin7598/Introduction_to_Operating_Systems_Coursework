@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -std=c11
 
-OBJS = main.o parser.o utility.o built_in.o error_handler.o
+OBJS = src/main.o src/parser.o src/utility.o src/built_in.o src/error_handler.o
 TARGET = main
 
 all: $(TARGET)
