@@ -1,5 +1,4 @@
 ![License](https://img.shields.io/badge/finished-SJTU-blue.svg)
-[![Build Status](https://focs.ji.sjtu.edu.cn/git/ece482/Zhukaiqi522370910091-p1/actions/workflows/push.yaml/badge.svg?branch=master)](https://focs.ji.sjtu.edu.cn/git/ece482/Zhukaiqi522370910091-p1/actions)
 
 # The Mumsh Shell
 
