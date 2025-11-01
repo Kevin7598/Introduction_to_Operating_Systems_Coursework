@@ -39,8 +39,8 @@ void append(Node **head, const char *key, void *data, size_t data_size);
 Node* read_file(const char *filename, int datatype);
 void write_file(const char *filename, Node *head, int datatype);
 
-static Node* merge(Node *a, Node *b, CompareFunc cmp);
-static void split(Node *source, Node **frontRef, Node **backRef);
+Node* merge(Node *a, Node *b, CompareFunc cmp);
+void split(Node *source, Node **frontRef, Node **backRef);
 void merge_sort(Node **head_ref, CompareFunc cmp);
 
 # endif

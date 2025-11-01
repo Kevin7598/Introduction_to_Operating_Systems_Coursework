@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    srand(time(NULL));
+    srand((unsigned int) time(NULL));
 
     const char *inputfile = argv[1];
     const char *sorttype = argv[2];

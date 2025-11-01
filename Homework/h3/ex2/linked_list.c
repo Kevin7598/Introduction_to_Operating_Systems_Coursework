@@ -50,14 +50,23 @@ int cmp_double_dec(const void *a, const void *b) {
     double diff = (*(double*)b - *(double*)a);
     return (diff > 0) - (diff < 0);
 }
-int cmp_str_inc(const void *a, const void *b) { return strcmp((const char*)a, (const char*)b); }
-int cmp_str_dec(const void *a, const void *b) { return strcmp((const char*)b, (const char*)a); }
-int cmp_random(const void *a, const void *b) { return rand() % 3 - 1; }
+int cmp_str_inc(const void *a, const void *b) {
+    return strcmp((const char*)a, (const char*)b);
+}
+
+int cmp_str_dec(const void *a, const void *b) {
+    return strcmp((const char*)b, (const char*)a);
+}
+int cmp_random(const void *a, const void *b) { 
+    (void)a;
+    (void)b;
+return (rand() % 2) ? 1 : -1;
+ }
 
 int get_file_type(const char *filename) {
-    if (strstr(filename, "int")) return 1;
-    if (strstr(filename, "double")) return 2;
-    if (strstr(filename, "char*")) return 3;
+if (strstr(filename, "int")) return 1;
+if (strstr(filename, "double")) return 2;
+if (strstr(filename, "char")) return 3;
     return 0;
 }
 
@@ -88,7 +97,7 @@ Node* read_file(const char *filename, int datatype) {
     if (!fp) { perror("fopen"); exit(1); }
 
     Node *head = NULL;
-    char line[256], key[128], val[128];
+    char line[4096], key[2048], val[2048];
     while (fgets(line, sizeof(line), fp)) {
         if (sscanf(line, "%[^=]=%s", key, val) != 2) continue;
 
@@ -99,9 +108,8 @@ Node* read_file(const char *filename, int datatype) {
             double d = atof(val);
             append(&head, key, &d, sizeof(double));
         } else if (datatype == 3) {
-            char *s = val;
             // printf("Read string: %s=%s\n", key, s); // Debug print
-            append(&head, key, s, strlen(s) + 1);
+            append(&head, key, val, strlen(val) + 1);
         }
     }
     fclose(fp);
@@ -125,7 +133,7 @@ void write_file(const char *filename, Node *head, int datatype) {
     fclose(fp);
 }
 
-static Node* merge(Node* a, Node* b, CompareFunc cmp) {
+Node* merge(Node* a, Node* b, CompareFunc cmp) {
     if (!a) return b;
     if (!b) return a;
 
@@ -141,7 +149,13 @@ static Node* merge(Node* a, Node* b, CompareFunc cmp) {
     return result;
 }
 
-static void split(Node* source, Node** frontRef, Node** backRef) {
+void split(Node* source, Node** frontRef, Node** backRef) {
+    if (source == NULL) {
+        *frontRef = NULL;
+        *backRef = NULL;
+        return;
+    }
+
     Node *slow = source;
     Node *fast = source->next;
 
